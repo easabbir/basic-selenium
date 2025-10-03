@@ -12,8 +12,8 @@ public class BaseClass {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        //driver.get("https://www.saucedemo.com/");
-        driver.get("https://trytestingthis.netlify.app/");
+        driver.get("https://www.saucedemo.com/");
+        //driver.get("https://trytestingthis.netlify.app/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
 
 
