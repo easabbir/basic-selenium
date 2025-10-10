@@ -35,6 +35,16 @@ public class TestAddToCart extends BaseClass{
 
         Thread.sleep(2000);
 
+        WebElement menu = driver.findElement(By.xpath("//button[@id='react-burger-menu-btn']"));
+        menu.click();
+
+        Thread.sleep(2000);
+
+        WebElement logoutButton = driver.findElement(By.xpath("//a[@id='logout_sidebar_link']"));
+        logoutButton.click();
+
+        Thread.sleep(2000);
+
 
 
 

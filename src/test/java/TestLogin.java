@@ -14,6 +14,9 @@ public class TestLogin extends BaseClass {
 
         //writing customized xpath using the format //tagname[@attribute='value']
         driver.findElement(By.xpath("//input[@class='submit-button btn_action']")).click();
+        //input[@id='login-button']
+        //input[@id='login-button']
+        driver.findElement(By.xpath("//input[@id='login-button']")).click();
 
 
         Assert.assertEquals(driver.getTitle(),"Swag Labs");
