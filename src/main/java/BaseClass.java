@@ -37,6 +37,7 @@ public class BaseClass {
         driver.get("https://www.saucedemo.com/");
         //driver.get("https://trytestingthis.netlify.app/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        Thread.sleep(3000);
 
 
 
