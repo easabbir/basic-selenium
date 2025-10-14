@@ -13,13 +13,8 @@ public class TestAddToCart extends BaseClass{
     @Test
     public void testAddToCart() throws InterruptedException {
         BaseClass.setupDriver();
-        driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("standard_user");
-        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sauce");
-        driver.findElement(By.xpath("//input[@type='submit']")).click();
 
-
-
-
+        login("standard_user", "secret_sauce");
 
         WebElement addToCartBackpack = driver.findElement(By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']"));
         addToCartBackpack.click();
@@ -33,11 +28,7 @@ public class TestAddToCart extends BaseClass{
         WebElement fleeceJacket = driver.findElement(By.xpath("//button[contains(@data-test, 'add-to-cart-sauce-labs-fleece-jacket')]"));
         fleeceJacket.click();
 
-        WebElement menu = driver.findElement(By.xpath("//button[@id='react-burger-menu-btn']"));
-        menu.click();
-
-        WebElement logoutButton = driver.findElement(By.xpath("//a[@id='logout_sidebar_link']"));
-        logoutButton.click();
+        logout();
 
 
 
@@ -57,6 +48,21 @@ public class TestAddToCart extends BaseClass{
         //addAllItemsToCart();
 
 
+
+    }
+
+    public void logout(){
+        WebElement menu = driver.findElement(By.xpath("//button[@id='react-burger-menu-btn']"));
+        menu.click();
+
+        WebElement logoutButton = driver.findElement(By.xpath("//a[@id='logout_sidebar_link']"));
+        logoutButton.click();
+    }
+
+    public void login(String username, String password){
+        driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys(username);
+        driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
+        driver.findElement(By.xpath("//input[@type='submit']")).click();
 
     }
 
