@@ -17,7 +17,7 @@ public class TestLogin extends BaseClass {
     @Test
     public void testLoginWithInvalidCredentials() throws InterruptedException {
         setupDriver();
-        login("standard_user", "secret_sauces");
+        login("standard_user", "secret_saucesasdfasd");
 
         Assert.assertEquals(driver.findElement(By.xpath("//h3[@data-test='error']")).getText(),"Epic sadface: Username and password do not match any user in this service");
     }
