@@ -1,20 +1,25 @@
+package tests;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
+import utils.BaseTest;
+import pages.LoginPage;
+
 
 import java.util.List;
 
-public class TestAddToCart extends BaseClass{
+public class TestAddToCart extends BaseTest {
 
 
 
     @Test
     public void testAddToCart() throws InterruptedException {
-        BaseClass.setupDriver();
+        setupDriver();
 
-        login("standard_user", "secret_sauce");
+        LoginPage loginObj = new LoginPage(driver);
+        loginObj.login("standard_user", "secret_sauce");
 
         WebElement addToCartBackpack = driver.findElement(By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']"));
         addToCartBackpack.click();
